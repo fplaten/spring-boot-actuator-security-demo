@@ -20,13 +20,13 @@ class ApiTest {
     fun `Missing path parameter returns 404`() {
         // This works as expected with and without Actuator
         val response1 = khttp.get(
-            url = "http://localhost:$port/huppifluppi/request"
+            url = "http://localhost:$port/api/huppifluppi/request"
         )
         Assertions.assertThat(response1.statusCode).isEqualTo(HttpStatus.OK.value())
 
         // This returns 200 with and 400 without Actuator
         val response2 = khttp.get(
-            url = "http://localhost:$port//request"
+            url = "http://localhost:$port/api//request"
         )
         Assertions.assertThat(response2.statusCode).isEqualTo(HttpStatus.BAD_REQUEST.value())
     }

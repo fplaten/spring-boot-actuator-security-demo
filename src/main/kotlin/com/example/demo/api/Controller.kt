@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class Controller {
 
-    @GetMapping(path = ["/{param}/request"])
+    @GetMapping(path = ["/api/{param}/request"])
     fun getRequest(
         @PathVariable(name = "param", required = true)
         param: String,
